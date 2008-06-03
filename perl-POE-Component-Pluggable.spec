@@ -7,7 +7,7 @@ Version:    %{version}
 Release:    %{release}
 License:    GPL or Artistic
 Group:      Development/Perl
-Summary:    A base class for creating plugin enabled POE Components.
+Summary:    A base class for creating plugin enabled POE Components
 Source:     http://www.cpan.org/modules/by-module/POE/%{module}-%{version}.tar.gz
 Url:        http://search.cpan.org/dist/%{module}
 BuildRequires: perl(Carp)
