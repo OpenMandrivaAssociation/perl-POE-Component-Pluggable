@@ -1,5 +1,5 @@
 %define module   POE-Component-Pluggable
-%define version    1.08
+%define version    1.10
 %define release    %mkrel 1
 
 Name:       perl-%{module}
