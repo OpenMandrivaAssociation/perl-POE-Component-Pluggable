@@ -1,21 +1,22 @@
-%define module   POE-Component-Pluggable
-%define version    1.20
-%define release    %mkrel 1
+%define upstream_name    POE-Component-Pluggable
+%define upstream_version 1.22
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    A base class for creating plugin enabled POE Components
-Source:     http://www.cpan.org/modules/by-module/POE/%{module}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{module}
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Carp)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(POE)
 BuildRequires: perl(Test::More)
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 POE::Component::Pluggable is a base class for creating plugin enabled POE
@@ -29,7 +30,7 @@ overriding '_pluggable_event()' and inserting '_pluggable_process()'
 wherever you dispatch events from.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
