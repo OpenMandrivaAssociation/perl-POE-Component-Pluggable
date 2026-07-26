@@ -1,15 +1,13 @@
 %define upstream_name    POE-Component-Pluggable
-%define upstream_version 1.26
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	1.26
+Release:	5
 
 Summary:	A base class for creating plugin enabled POE Components
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -31,7 +29,7 @@ overriding '_pluggable_event()' and inserting '_pluggable_process()'
 wherever you dispatch events from.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -60,8 +58,7 @@ make test
 * Fri Jul 24 2009 Jérôme Quelin <jquelin@mandriva.org> 1.220.0-1mdv2010.0
 + Revision: 399263
 - update to 1.22
-- using %%perl_convert_version
-- fixed license field
+- using %1.26 fixed license field
 
 * Mon May 04 2009 Guillaume Rousse <guillomovitch@mandriva.org> 1.20-1mdv2010.0
 + Revision: 371734
